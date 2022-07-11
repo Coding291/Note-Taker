@@ -8,6 +8,7 @@ const path = require('path');
 const {db} = require('./db/db.json');
 //here we setup express
 const express = require('express')
+const PORT = process.env.PORT || 3002;
 const app = express();
 
 //we add middleware to make all files public and so all the file link to one another
@@ -66,6 +67,6 @@ app.get('*', (req, res) => {
   });
   
 //here where the port will listen for the route
-app.listen(3002, () => {
-    console.log(`API server now on port 3002!`);
+app.listen(PORT, () => {
+    console.log(`API server now on port ${PORT}`);
   });
